@@ -51,14 +51,12 @@
 
     a { color: inherit; text-decoration: none; }
 
-    /* ── SCROLL PROGRESS ── */
     .scroll-progress {
       position: fixed; top: 0; left: 0; height: 2px; width: 0%;
       background: linear-gradient(90deg, var(--gold), var(--gold));
       z-index: 999; transition: width 0.08s linear;
     }
 
-    /* ── REVEAL ── */
     .reveal {
       opacity: 0; transform: translateY(24px);
       transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
@@ -71,7 +69,6 @@
     .d3 { transition-delay: 0.21s; }
     .d4 { transition-delay: 0.28s; }
 
-    /* ── 3D CARD ── */
     .card {
       background: var(--bg-card);
       border-radius: var(--rl);
@@ -82,7 +79,6 @@
       box-shadow: inset 0 1px 0 var(--in), 0 6px 32px rgba(0,0,0,0.5);
     }
 
-    /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
@@ -104,7 +100,6 @@
     }
     .nav-links a:hover, .nav-links a.active { color: var(--ink); }
 
-    /* ── HERO ── */
     .hero {
       min-height: 100vh;
       display: grid; grid-template-columns: 1fr 1fr; align-items: center;
@@ -153,7 +148,6 @@
       animation: fadeUp 0.65s ease both 0.34s;
     }
 
-    /* hero right — stat block */
     .hero-right {
       display: flex; flex-direction: column; gap: 12px;
       animation: fadeUp 0.7s ease both 0.4s;
@@ -195,7 +189,6 @@
       to   { opacity:1; transform:translateY(0); }
     }
 
-    /* ── BUTTONS ── */
     .btn {
       display: inline-flex; align-items: center; gap: 7px;
       padding: 11px 24px; border-radius: var(--r);
@@ -216,7 +209,6 @@
     }
     .btn-secondary:hover { color: var(--ink); }
 
-    /* ── LAYOUT ── */
     .wrap { padding: 6rem 2.5rem; max-width: 1080px; margin: 0 auto; position: relative; z-index: 1; }
 
     .section-head { margin-bottom: 3rem; }
@@ -243,7 +235,6 @@
       background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05) 30%, rgba(255,255,255,0.05) 70%, transparent);
     }
 
-    /* ── TRACKS ── */
     .tracks { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
 
     .track-card {
@@ -291,7 +282,6 @@
     }
     .track-outcome strong { color: var(--ink-2); font-weight: 600; }
 
-    /* ── PROJECTS ── */
     .projects-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -351,7 +341,6 @@
     .proj-link-fs { background: rgba(167,139,250,0.12); color: var(--fs); border: 1px solid rgba(167,139,250,0.20); }
     .proj-link-fs:hover { background: rgba(167,139,250,0.20); }
 
-    /* ── SKILLS ── */
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
@@ -366,10 +355,8 @@
     }
     .skill-chip:hover { color: var(--ink); }
 
-    /* ── CONTACT ── */
     .contact-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 2rem; }
 
-    /* ── FOOTER ── */
     footer {
       border-top: 1px solid rgba(255,255,255,0.04);
       padding: 2rem 2.5rem; text-align: center;
@@ -378,7 +365,6 @@
       position: relative; z-index: 1;
     }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; }
       .hero-right { display: none; }
@@ -405,7 +391,6 @@
     </ul>
   </nav>
 
-  <!-- ── HERO ── -->
   <div class="hero">
     <div class="hero-left">
       <span class="hero-tag"><span class="pulse"></span>Available for internships · Summer 2026</span>
@@ -460,7 +445,6 @@
 
   <div class="divider"></div>
 
-  <!-- ── TRACKS ── -->
   <section class="wrap" id="tracks">
     <div class="section-head">
       <div class="eyebrow reveal">What I'm learning</div>
@@ -544,7 +528,6 @@
 
   <div class="divider"></div>
 
-  <!-- ── PROJECTS ── -->
   <section class="wrap" id="projects">
     <div class="section-head">
       <div class="eyebrow reveal">Selected work</div>
@@ -619,8 +602,21 @@
         </div>
       </div>
 
-      <div class="project-card card reveal-right reversible d3">
+      <div class="project-card card reveal-right reversible d2">
         <span class="proj-num">#06</span>
+        <div class="proj-body">
+          <div class="proj-top">
+            <span class="proj-title">DHT22 Temperature & Humidity Logger</span>
+            <span class="badge badge-es">Embedded</span>
+          </div>
+          <p class="proj-desc">End-to-end hardware data pipeline — an Arduino Nano reads a DHT22 sensor every two seconds and streams readings over USB serial. A Python logger captures the data to CSV and a second script plots temperature and humidity over time with matplotlib.</p>
+          <div class="proj-tags"><span class="tag">C++</span><span class="tag">Arduino</span><span class="tag">Python</span><span class="tag">pyserial</span><span class="tag">pandas</span><span class="tag">matplotlib</span></div>
+          <div class="proj-links"><a href="https://github.com/edub966/dht22-temp-humidity-logger" class="proj-link proj-link-es" target="_blank">See Project →</a></div>
+        </div>
+      </div>
+
+      <div class="project-card card reveal-left reversible d3">
+        <span class="proj-num">#07</span>
         <div class="proj-body">
           <div class="proj-top">
             <span class="proj-title">Housing Price Predictor</span>
@@ -632,8 +628,8 @@
         </div>
       </div>
 
-      <div class="project-card card reveal-left reversible d4">
-        <span class="proj-num">#07</span>
+      <div class="project-card card reveal-right reversible d4">
+        <span class="proj-num">#08</span>
         <div class="proj-body">
           <div class="proj-top">
             <span class="proj-title">Developer Log API</span>
@@ -645,8 +641,8 @@
         </div>
       </div>
 
-      <div class="project-card card reveal-right reversible d4">
-        <span class="proj-num">#08</span>
+      <div class="project-card card reveal-left reversible d4">
+        <span class="proj-num">#09</span>
         <div class="proj-body">
           <div class="proj-top">
             <span class="proj-title">Authentication System</span>
@@ -663,7 +659,6 @@
 
   <div class="divider"></div>
 
-  <!-- ── SKILLS ── -->
   <section class="wrap" id="skills">
     <div class="section-head">
       <div class="eyebrow reveal">Technical skills</div>
@@ -687,7 +682,6 @@
 
   <div class="divider"></div>
 
-  <!-- ── CONTACT ── -->
   <section class="wrap" id="contact">
     <div class="section-head">
       <div class="eyebrow reveal">Get in touch</div>
@@ -707,7 +701,6 @@
   <footer>built and designed by Erik Woods · 2026</footer>
 
   <script>
-    // scroll reveal
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -719,14 +712,12 @@
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => obs.observe(el));
 
-    // scroll progress bar
     const progress = document.getElementById('progress');
     window.addEventListener('scroll', () => {
       const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
       progress.style.width = pct + '%';
     });
 
-    // active nav link
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
     const secObs = new IntersectionObserver(entries => {
